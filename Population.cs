@@ -6,13 +6,33 @@ namespace PadawansTask1
     {
         public static int GetYears(int initialPopulation, double percent, int visitors, int currentPopulation)
         {
-            double growth = initialPopulation * (percent / 100) + visitors;
-            for (int a = initialPopulation; a <= currentPopulation; a += growth)
+            if (initialPopulation == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            if (currentPopulation == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            if (persent < 0)
+            {
+                throw new ArgumentException();
+            }
+            try
             {
                 int years = 0;
-                years++;
+                double p = persent / 100;
+                for (int pop = initialPopulation; pop < currentPopulation; pop = checked(a + (int)(p * a) + visitors))
+                {
+                    years++;
+                }
             }
-           throw new NotImplementedException();
+            catch (OverflowException)
+            {
+                throw new OverflowException();
+            }
             return years;
         } 
       
