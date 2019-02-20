@@ -16,15 +16,16 @@ namespace PadawansTask1
                 throw new ArgumentException();
             }
 
-            if (persent < 0)
+            if (percent < 0)
             {
                 throw new ArgumentException();
             }
+            int years = 0;
             try
             {
-                int years = 0;
-                double p = persent / 100;
-                for (int pop = initialPopulation; pop < currentPopulation; pop = checked(a + (int)(p * a) + visitors))
+                
+                double p = percent / 100;
+                for (int pop = initialPopulation; pop < currentPopulation; pop = checked(pop + (int)(p * pop) + visitors))
                 {
                     years++;
                 }
